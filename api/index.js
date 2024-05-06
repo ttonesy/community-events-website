@@ -90,6 +90,7 @@ app.post('/post', uploadMiddleWare.single('file'), async (req,res) => {
     const ext = parts[parts.length - 1];
     const newPath = path+'.'+ext;
     fs.renameSync(path, newPath);
+    
 
     const {title, summary, content} = req.body;
     const postDoc = await Post.create({
@@ -97,11 +98,15 @@ app.post('/post', uploadMiddleWare.single('file'), async (req,res) => {
         summary,
         content,
         cover:newPath,
+        //author:
     });
 
     res.json(postDoc);
 });
 
+app.get('/post', async (req, res) => {
+    res.json(await Post.find());
+});
 
 // Start server
 app.listen(4000, () => console.log('Server running on port 4000'));
