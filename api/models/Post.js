@@ -6,6 +6,11 @@ const PostSchema = new Schema({
     summary: String,
     content: String,
     cover:String,
+    author:{type:Schema.Types.ObjectId, ref:'User'},
+    createdAt: {
+        type: Date,
+        default: Date.now // This sets the default value to the current date and time
+      },
     }, {
         timestampts:true,
 });

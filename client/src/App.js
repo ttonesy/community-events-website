@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage";
 import { UserContextProvider } from "./UserContext";
 import CreatePost from "./pages/CreatePost";
 
+
 function App() {
   return (
     <UserContextProvider>

@@ -1,16 +1,26 @@
-export default function Post() {
-	
-	return(      <div className="post">
+import {formatISO9075} from 'date-fns';
+import {Link} from 'react-router-dom';
+
+export default function Post({ title, summary, _id , content, cover, createdAt}) {
+
+	return(      
+  <div className="post">
         <div className="image">
-          <img src="https://d1631mxega5ah2.cloudfront.net/bandas-y-trocas-2024-2024-05-25-44bb10d4-5d0e-48ce-8ba9-84f0d66a9d8e.jpeg" alt="" />  
+          <Link to = {`/post/${_id}`}>
+          <img src={'http://localhost:4000/'+cover} alt="" />  
+          </Link>
         </div>
         <div className="texts">
-           <h2>Bandas y Trocas 2024</h2>
+          <Link to = {`/post/${_id}`}>
+          <h2>{title}</h2>
+          </Link>
            <p className="info">
-            <a className="author">Texas Motor Speedway</a>
-            <time>Sat May 25 - 12:00 pm</time>
+            <a className="author"></a>
+            <time>{formatISO9075(createdAt)}</time>
            </p>
-        <p className = "summary"> COME CELEBRATE WITH US</p>
+        <p className = "summary"> {summary}</p>
+        <p className="content" dangerouslySetInnerHTML={{ __html: content }}></p>
         </div>
-      </div>)
+      </div>
+    );
 }

@@ -17,12 +17,16 @@ main {
   margin: 0 auto;
 }
 
-header{
+header {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 50px;
   align-items: center;
+  background-color: #0000002c;
+  color: #000000; 
+  border-radius: 10px;
+
 }
 
 header a{
@@ -45,12 +49,23 @@ div.post {
   grid-template-columns: 0.9fr 1.1fr;
   gap: 20px;
   margin-bottom: 30px;
+  border: 2px solid #ccc;
+  border-radius: 15px; 
+  background-color: #f9f9f9; 
+  padding: 20px; 
 }
+
 
 div.post div.texts h2 {
   margin: 0;
   font-size: 1.8rem;
 } 
+
+div.post div.texts a {
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
 
 div.post p.info {
   margin: 6px 0;

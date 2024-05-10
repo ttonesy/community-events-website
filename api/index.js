@@ -21,6 +21,7 @@ app.use(cors({
 }));
 app.use(express.json()); 
 app.use(cookieParser());
+app.use('/uploads', express.static('uploads'));
 
 // Connect to local MongoDB
 mongoose.connect('mongodb://localhost:27017/blog')
@@ -90,6 +91,7 @@ app.post('/post', uploadMiddleWare.single('file'), async (req,res) => {
     const ext = parts[parts.length - 1];
     const newPath = path+'.'+ext;
     fs.renameSync(path, newPath);
+    
 
     const {title, summary, content} = req.body;
     const postDoc = await Post.create({
@@ -97,9 +99,15 @@ app.post('/post', uploadMiddleWare.single('file'), async (req,res) => {
         summary,
         content,
         cover:newPath,
+        //author:
     });
 
     res.json(postDoc);
+});
+
+app.get('/post', async (req, res) => {
+    const posts = await Post.find().sort({ createdAt: -1 });
+    res.json(posts);
 });
 
 
