@@ -29,3 +29,13 @@ COMMANDS TO RUN:
 3. mongosh: For this one you will be in the main 4F1B folder and give the following command "mongosh --host localhost --port 27017" this will connect with our mongoDB which is set up in compass and will display users. You can search the users from terminal by doing the following commands, "use blog" which gets you into the DB, then "db.users.find()" which will find any users that are in the DB. 
 
 >>>>>>> origin/main
+
+
+Functionalities:
+  - User Creation
+      --registration
+      --login
+  - Dynamic Posts
+      -- images
+      -- titles
+      -- summaries
