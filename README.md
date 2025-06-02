@@ -1,41 +1,44 @@
-<<<<<<< HEAD
-=======
-# 4F1B
+Here's a cleaned-up and more organized version of your documentation:
 
-SETUP DATABASE: 
+# 4F1B Documentation
 
->>>>>>> origin/main
-You will need to install Mongo DB Compass download from this link https://www.mongodb.com/try/download/compass
+## Database Setup
 
-You will then need to start a new connection and give it the link mongodb://localhost:27017/blog
+To set up the database, you will need to install MongoDB Compass. Download it from the following link:
+[https://www.mongodb.com/try/download/compass](https://www.mongodb.com/try/download/compass)
 
-<<<<<<< HEAD
-COMMANDS TO RUN:
+After installation, start a new connection in MongoDB Compass using the following connection string:
+`mongodb://localhost:27017/blog`
 
-Yarn start: cd into the client folder, then run the "yarn start" command.
+## Commands to Run
 
-Nodemon: This may need you to install something if you have not already. You will cd into the api folder, then give command "nodemon" which will start the node index.js and gives live refreshing while editing.
+Follow these steps to run the application components:
 
-mongosh: For this one you will be in the main 4F1B folder and give the following command "mongosh --host localhost --port 27017" this will connect with our mongoDB which is set up in compass and will display users. You can search the users from terminal by doing the following commands, "use blog" which gets you into the DB, then "db.users.find()" which will find any users that are in the DB.
-=======
+1.  **Start Client:**
+    *   Navigate to the `client` folder.
+    *   Run the command: `yarn start`
 
+2.  **Start API (Nodemon):**
+    *   Navigate to the `api` folder.
+    *   Run the command: `nodemon`
+    *   *Note: If you don't have Nodemon installed, you may need to install it globally first (e.g., `npm install -g nodemon`).* This command starts `index.js` and provides live refreshing during development.
 
+3.  **Connect to MongoDB Shell (mongosh):**
+    *   From the main `4F1B` folder, run the following command:
+        `mongosh --host localhost --port 27017`
+    *   This will connect to your MongoDB instance running via Compass and allow you to interact with the database.
+    *   To view users in the `blog` database from the `mongosh` terminal, use these commands:
+        *   Switch to the `blog` database: `use blog`
+        *   Find all users: `db.users.find()`
 
-COMMANDS TO RUN: 
-1. Yarn start: cd into the client folder, then run the "yarn start" command.
+## Functionalities
 
-2. Nodemon: This may need you to install something if you have not already. You will cd into the api folder, then give command "nodemon" which will start the node index.js and gives live refreshing while editing. 
+The application currently supports the following core functionalities:
 
-3. mongosh: For this one you will be in the main 4F1B folder and give the following command "mongosh --host localhost --port 27017" this will connect with our mongoDB which is set up in compass and will display users. You can search the users from terminal by doing the following commands, "use blog" which gets you into the DB, then "db.users.find()" which will find any users that are in the DB. 
-
->>>>>>> origin/main
-
-
-Functionalities:
-  - User Creation
-      --registration
-      --login
-  - Dynamic Posts
-      -- images
-      -- titles
-      -- summaries
+*   **User Management:**
+    *   Registration
+    *   Login
+*   **Dynamic Posts:**
+    *   Images
+    *   Titles
+    *   Summaries
