@@ -1,6 +1,4 @@
-Here's a cleaned-up and more organized version of your documentation:
-
-# 4F1B Documentation
+# Community Events Website
 
 ## Database Setup
 
